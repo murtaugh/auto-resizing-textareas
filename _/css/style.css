@@ -27,6 +27,10 @@ textarea {
 	outline: 0;
 	
 	-webkit-transition: all 200ms ease-in-out, height 100ms ease-in-out;
+	-moz-transition: all 200ms ease-in-out, height 100ms ease-in-out;
+	-ms-transition: all 200ms ease-in-out, height 100ms ease-in-out;
+	-o-transition: all 200ms ease-in-out, height 100ms ease-in-out;
+	transition: all 200ms ease-in-out, height 100ms ease-in-out;
 }
 
 .js textarea[data-autoresize] {
@@ -35,6 +39,10 @@ textarea {
 
 textarea:not([data-autoresize]) {
 	-webkit-transition: all 200ms ease-in-out, height 0;
+	-moz-transition: all 200ms ease-in-out, height 0;
+	-ms-transition: all 200ms ease-in-out, height 0;
+	-o-transition: all 200ms ease-in-out, height 0;
+	transition: all 200ms ease-in-out, height 0;
 }
 
 textarea:focus {
