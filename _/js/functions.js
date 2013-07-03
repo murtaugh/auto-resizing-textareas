@@ -17,7 +17,7 @@ $(document).ready(function (){
 
 /*
 	Functions for auto-resizing textareas.
-	Based in great part on John Long's autogrow plugin:
+	Based in great part (ok, almost entirely) on John Long's autogrow plugin:
 	https://gist.github.com/jlong/2127634
 	
 	For a more consistent user experience you should apply resize: none to auto-resizing textareas in your CSS.
