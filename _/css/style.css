@@ -1,0 +1,43 @@
+* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+body {
+	width: 45%;
+	margin: 100px auto;
+}
+
+h1 {
+	width: 100%;
+	margin: 0 auto 10px;
+}
+
+textarea {
+	display: block;
+	width: 100%;
+	min-height: 90px;
+	margin: 0 auto 50px;
+	
+	padding: 1em;
+	border: 1px solid #eee;
+	border-radius: .4em;
+	
+	font: normal 12px/1.5em courier;
+	
+	color: #666;
+	
+	outline: 0;
+	
+	-webkit-transition: all 200ms ease-in-out, height 100ms ease-in-out;
+}
+
+.js textarea[data-autoresize] {
+	resize: none;
+}
+
+textarea:not([data-autoresize]) {
+	-webkit-transition: all 200ms ease-in-out, height 0;
+}
+
+textarea:focus {
+	color: #000;
+	border: 1px solid #ccc;
+}
