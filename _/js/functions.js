@@ -2,7 +2,7 @@
 
 $(document).ready(function (){
 
-	$('textarea[data-autoresize]').on('input propertychange', function() {
+	$('textarea[data-autoresize]').on('input propertychange focus', function() {
 		
 		autoResize($(this));
 		
@@ -44,7 +44,7 @@ function autoResize(which) {
 
 		// Setup textarea
 		textarea.css({'overflow-y': 'hidden', 'resize': 'none', 'box-sizing': 'border-box'});
-
+		
 		// Sizer function
 		function sizeTextarea() {
 			clearTimeout(timer);
@@ -53,7 +53,7 @@ function autoResize(which) {
 				expander.html(value);
 				expander.css('width', textarea.innerWidth() + 2 + 'px');
 				textarea.css('height', Math.max(expander.innerHeight(), initialHeight) + 2 + 'px');
-			}, 0); // throttle by 100ms 
+			}, 100); // throttle by 100ms 
 		}
 
 		// Bind sizer to IE 9+'s input event and Safari's propertychange event
