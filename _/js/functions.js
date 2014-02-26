@@ -44,20 +44,20 @@ function autoResize(which) {
 
 		// Setup textarea
 		textarea.css({'overflow-y': 'hidden', 'resize': 'none', 'box-sizing': 'border-box'});
-		
+
 		// Sizer function
 		function sizeTextarea() {
-			clearTimeout(timer);
-			timer = setTimeout(function() {
-				var value = escape(textarea.val()) + '<br>z';
-				expander.html(value);
-				expander.css('width', textarea.innerWidth() + 2 + 'px');
-				textarea.css('height', Math.max(expander.innerHeight(), initialHeight) + 2 + 'px');
-			}, 100); // throttle by 100ms 
+				clearTimeout(timer);
+				timer = setTimeout(function() {
+						var value = escape(textarea.val().replace(/\</g, '&lt;')) + '<br>z';
+						expander.html(value);
+						expander.css('width', textarea.innerWidth() + 2 + 'px');
+						textarea.css('height', Math.max(expander.innerHeight(), initialHeight) + 2 + 'px');
+				}, 100); // throttle by 100ms 
 		}
 
 		// Bind sizer to IE 9+'s input event and Safari's propertychange event
-		textarea.on('input.autogrow propertychange.autogrow', sizeTextarea);
+		textarea.on('input.autogrow propertychange.autogrow focus', sizeTextarea);
 
 		// Set the initial size
 		sizeTextarea();
